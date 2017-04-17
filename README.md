@@ -3,6 +3,8 @@
 This script has a very simple purpose: it monitors a remote irssi session (as in the case when running irssi in tmux or screen on a remote machine) and pops up [growl](http://growl.info) notifications on your local machine when you have new mentions, direct messages, or optionally when activity occurs in a list of named channels.
 
 
+This script and general approach was adopted from [this blogpost](http://mlomnicki.com/ruby/linux/2011/02/09/irc-notifications.html) by [Michał Łomnicki](https://github.com/mlomnicki).
+
 ## Installation
 
  - install growl, and the `growlnotify` command line tool from the [growl website](http://growl.info/downloads). 
@@ -19,6 +21,6 @@ The first part remotely executes the `tail` command, which prints new lines as t
 
 ## Contributions
 
-Please! If this is useful to you it probably needs to be improved. Open an issue and let's chat about it.
+If this is useful to you it probably needs to be improved. Open an issue and let's chat about it. :)
  
 
