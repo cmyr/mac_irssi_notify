@@ -47,7 +47,7 @@ def parse_msg(line, channel):
         timestamp, rest = line.split('<', maxsplit=1)
         timestamp = timestamp.strip()
         user, rest = rest.split('>')
-        return IrcMessage(channel, timestamp, user.strip(), rest.strip())
+        return IrcMessage(channel, timestamp, user.strip(' ~'), rest.strip())
     except Exception as err:
         print("error parsing msg", line, err)
         return None
@@ -100,7 +100,7 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description='Growl notifications for remote irssi sessions.')
     parser.add_argument('-u', '--user', type=str, help='[your] username.')
-    parser.add_argument('-c', '--channels', type=str, nargs="+",
+    parser.add_argument('-c', '--channels', type=str, nargs="+", default=[],
                         help='A list of channels. You will receive notifications of all\
                         messages in these channels.')
     parser.add_argument('-v', '--verbosity', action='store_true',
