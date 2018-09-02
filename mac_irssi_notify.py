@@ -47,7 +47,7 @@ def parse_msg(line, channel):
         timestamp, rest = line.split('<', maxsplit=1)
         timestamp = timestamp.strip()
         user, rest = rest.split('>')
-        return IrcMessage(channel, timestamp, user.strip(' ~'), rest.strip())
+        return IrcMessage(channel, timestamp, user.strip(' ~@'), rest.strip())
     except Exception as err:
         print("error parsing msg", line, err)
         return None
